@@ -9,7 +9,7 @@
 *Import the `seo` module into your Deno project
 
 ```ts
-import { generateSchema } from "seo";
+import { generateSchema } from "https://deno.land/x/seo";
 
 ```
     
@@ -17,7 +17,7 @@ import { generateSchema } from "seo";
 
 ## How does it work?
 
-**SEO** allows you retrieve schema markup that can be used within **ld+json** script tags
+**SEO** allows you retrieve schema markup that can be used within **json+ld** script tags
 
 Article
 

@@ -1,6 +1,5 @@
-interface Article {
-    '@context'?: string,
-    '@type': string,
+interface ArticleProp {
+    type?: string,
     headline?: string,
     author?: string,
     url?: string,
@@ -8,4 +7,4 @@ interface Article {
     datePublished?: string,
 }
 
-export default Article;
+export default ArticleProp;

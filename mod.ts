@@ -1,9 +1,9 @@
-import Article from "./src/types/article.ts";
-import SchemaMarkup from "./src/types/schemaMarkup.ts";
+import ArticleSchema from "./src/types/articleSchema.ts";
+import SchemaProps from "./src/types/SchemaProps.ts";
 
-function generateMarkup(schemaType: string, data: SchemaMarkup): Article | null {
+function generateMarkup(schemaType: string, data: SchemaProps): ArticleSchema | null {
     if(schemaType === 'article') {
-        const article: Article = {
+        const article: ArticleSchema = {
             "@context": "https://schema.org",
             "@type": "NewsArticle",
             "headline": "Title of a News Article",
