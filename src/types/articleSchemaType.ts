@@ -1,10 +1,12 @@
+import Person from "./person.ts";
+
 interface ArticleSchema {
     '@context'?: string,
     '@type': string,
     headline?: string,
-    author?: string,
+    author?: Person,
     url?: string,
-    image?: string[],
+    image?: string,
     datePublished?: string,
 }
 
