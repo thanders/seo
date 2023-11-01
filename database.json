@@ -1,8 +1,0 @@
-{
-  "seo": {
-    "type": "github",
-    "owner": "thanders",
-    "repo": "https://github.com/thanders/seo",
-    "desc": "An SEO module for creating schema markup"
-  }
-}
