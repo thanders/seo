@@ -1,32 +1,41 @@
-# Seo   [![Badge License]][License]
+# Search Engine Optimization (SEO) [![Badge License]][License]
 
-*Generate schema markup to improve your site's SEO.*
+*Generate schema markup to for JSON+LD scripts to improve the way your site's seach results are displayed.*
 
 <br>
 
 ## Getting Started
 
-*Import the `seo` module into your Deno project
+Import the `SEO` module into your Deno project
 
 ```ts
 import { generateSchema } from "https://deno.land/x/seo";
 
   const article: ArticleProp = {
-    author: 'Bob',
-    type: 'NewsArticle',
-    url: 'https://deno.land/x/seo',
-    datePublished: '31.01.2023',
-    image: ['https://docs.deno.com/deno-looking-up.svg']
+    author: {
+      '@type': 'Person',
+      name: 'Bob Sacamano',
+      url: 'www.mysite.com'
+    },
+    type: 'BlogPosting',
+    headline: “Example blog post title“,
+    description: “Example blog post description.“,
+    image: “https://www.example.com/example-image-url.jpg“,
+    datePublished: '31.10.2023',
 
-
-    
-  }
+}
   const mockContext = 'https://schema.org';
-  const articleSchemaMarkup = generateMarkup('article', article);
+  const articleMarkup = generateMarkup('article', article);
+
+  return {
+    <head>
+        <script type="application/ld+json">
+            {articleMarkup}
+        </script>
+    </head>
+  };
 
 ```
-    
-<br>
 
 ## How does it work?
 
@@ -38,6 +47,23 @@ Article
 
 Person
 
+## Why is this useful?
+
+This module exports the related types for commonly used schema types. You will be able to distinguish between what is
+<a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank">documented</a>
+as working for structured data markup by Google, but not limited.
+<br>
+The purpose of the project is provide type validation for structured data markup and a convent way to generate the markup, in alignment with the guidelines from search engines and schema.org.
+
+## Related links
+
+Introduction to structured data markup in Google Search
+https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
+
+schema.org - Schema for structured data
+<br>
+https://schema.org/
+
 ## Unit Tests
 
 Unit tests can be run using:
@@ -45,8 +71,6 @@ Unit tests can be run using:
 ```shell
 deno test
 ```
-
-<br>
 
 ## Distribution
 
@@ -59,7 +83,6 @@ https://deno.land/x/seo
 <!----------------------------------------------------------------------------->
 
 [License]: LICENSE
-
 
 <!----------------------------------[ Badges ]--------------------------------->
 
