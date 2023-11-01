@@ -1,28 +1,33 @@
 # Seo   [![Badge License]][License]
 
-*Generate schema markup to improve your site's SEO.*
+*Generate schema markup to for JSON+LD scripts to improve the way your site's seach results are displayed.*
 
 <br>
 
 ## Getting Started
 
-*Import the `seo` module into your Deno project
+Import the `seo` module into your Deno project
 
 ```ts
 import { generateSchema } from "https://deno.land/x/seo";
 
   const article: ArticleProp = {
-    author: 'Bob',
+    author: 'Bob Sacamano',
     type: 'NewsArticle',
     url: 'https://deno.land/x/seo',
-    datePublished: '31.01.2023',
+    datePublished: '31.10.2023',
     image: ['https://docs.deno.com/deno-looking-up.svg']
-
-
-    
   }
   const mockContext = 'https://schema.org';
-  const articleSchemaMarkup = generateMarkup('article', article);
+  const articleMarkup = generateMarkup('article', article);
+
+  return {
+    <head>
+        <script type="application/ld+json">
+            {articleMarkup}
+        </script>
+    </head>
+  };
 
 ```
     
@@ -37,6 +42,18 @@ Article
 <br>
 
 Person
+
+## Why is this useful?
+
+This module exports the related types for each type of schema. The purpose of the project is provide type checking for commonly used structured data markup and a convent way to generate the markup, in alignment with the guidelines from search engines and schema.org.
+
+## Related links
+
+Introduction to structured data markup in Google Search
+https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data
+
+schema.org - Schema for structured data
+https://schema.org/
 
 ## Unit Tests
 
@@ -59,7 +76,6 @@ https://deno.land/x/seo
 <!----------------------------------------------------------------------------->
 
 [License]: LICENSE
-
 
 <!----------------------------------[ Badges ]--------------------------------->
 
