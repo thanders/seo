@@ -4,7 +4,7 @@ import ArticleProp from "./types/articleProp.ts";
 
 Deno.test("mod - Article schema should return as expected", () => {
   const article: ArticleProp = {
-    author: 'Bob',
+    author: ' Bob Sacamano',
     type: 'NewsArticle',
     url: 'https://deno.land/x/seo',
     datePublished: '31.01.2023',
