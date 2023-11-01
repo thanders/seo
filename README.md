@@ -11,6 +11,19 @@
 ```ts
 import { generateSchema } from "https://deno.land/x/seo";
 
+  const article: ArticleProp = {
+    author: 'Bob',
+    type: 'NewsArticle',
+    url: 'https://deno.land/x/seo',
+    datePublished: '31.01.2023',
+    image: ['https://docs.deno.com/deno-looking-up.svg']
+
+
+    
+  }
+  const mockContext = 'https://schema.org';
+  const articleSchemaMarkup = generateMarkup('article', article);
+
 ```
     
 <br>
@@ -34,6 +47,14 @@ deno test
 ```
 
 <br>
+
+## Distribution
+
+The module is published on https://deno.land/x as a Deno Third Party Module
+
+Module page:
+https://deno.land/x/seo
+
 
 <!----------------------------------------------------------------------------->
 
