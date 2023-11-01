@@ -6,6 +6,10 @@ Deno.test("mod - Article schema should return as expected", () => {
   const article: ArticleProp = {
     author: 'Bob',
     type: 'NewsArticle',
+    url: 'https://deno.land/x/seo',
+    datePublished: '31.01.2023',
+    image: ['https://docs.deno.com/deno-looking-up.svg']
+
 
     
   }
@@ -14,4 +18,5 @@ Deno.test("mod - Article schema should return as expected", () => {
   assertEquals(schemaMarkup?.["@type"], article.type );
   assertEquals(schemaMarkup?.["@context"], mockContext );
   assertEquals(schemaMarkup?.author, article.author );
+  assertEquals(schemaMarkup?.datePublished, article.datePublished );
 });
