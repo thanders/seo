@@ -1,20 +1,9 @@
-import ArticleSchema from "./src/types/articleSchema.ts";
-import SchemaProps from "./src/types/SchemaProps.ts";
+import ArticleSchema from "./src/types/articleSchemaType.ts";
+import { ArticleType } from "./src/types/articleType.ts";
+import BlogPostingSchema from "./src/types/blogPostingSchemaType.ts";
+import person from "./src/types/person.ts";
 
-function generateMarkup(schemaType: string, data: SchemaProps): ArticleSchema | null {
-    if(schemaType === 'article') {
-        const article: ArticleSchema = {
-            "@context": "https://schema.org",
-            "@type": "NewsArticle",
-            "headline": "Title of a News Article",
-            author: data.author,
-            url: data.url,
-            image: [],
-            datePublished: ''
-        }
-        return article
-    }
-  return null;
-}
+export { schemaTypeEnum } from './src/enums/schemaTypeEnum.ts'
 
-export { generateMarkup }
+export { generateMarkup } from './src/generateMarkup.ts';
+export type { ArticleType, ArticleSchema, BlogPostingSchema, person };
